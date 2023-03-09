@@ -1,0 +1,26 @@
+{
+      "name": "AJAY JATAV",
+      "skills": {
+            "ml": 0.5833333333333334,
+            "dl": 0.16666666666666666,
+            "python": 0.08333333333333333,
+            "aws": 0.08333333333333333,
+            "tf": 0.08333333333333333
+      },
+      "phone": [
+            "797 349 4585"
+      ],
+      "email": [
+            "ajcreativepython@gmail.com"
+      ],
+      "links": {
+            "email": [
+                  "ajcreative@gmail.co",
+                  "ajcreative@gmail.co",
+                  "abhimanyu.python98@gmail.com"
+            ],
+            "github": [],
+            "linkedin": [],
+            "others": []
+      }
+}

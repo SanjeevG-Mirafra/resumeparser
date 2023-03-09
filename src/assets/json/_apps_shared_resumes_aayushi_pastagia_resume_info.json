@@ -1,0 +1,30 @@
+{
+      "name": "Aayushi Pastagia",
+      "skills": {
+            "ml": 0.46153846153846156,
+            "python": 0.19230769230769232,
+            "dl": 0.11538461538461539,
+            "sql": 0.038461538461538464,
+            "oop": 0.038461538461538464,
+            "tf": 0.038461538461538464,
+            "aws": 0.038461538461538464,
+            "c++": 0.038461538461538464,
+            "paas": 0.038461538461538464
+      },
+      "phone": [
+            "9879468400"
+      ],
+      "email": [
+            "aayushipastagia@gmail.com"
+      ],
+      "links": {
+            "email": [],
+            "github": [
+                  "https://www.github.com/apastagia"
+            ],
+            "linkedin": [
+                  "https://www.linkedin.com/in/aayushipastagia"
+            ],
+            "others": []
+      }
+}

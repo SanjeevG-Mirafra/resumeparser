@@ -1,0 +1,26 @@
+{
+      "name": "ANUPAMA M",
+      "skills": {
+            "dl": 0.4166666666666667,
+            "python": 0.16666666666666666,
+            "ml": 0.16666666666666666,
+            "svm": 0.08333333333333333,
+            "tf": 0.08333333333333333,
+            "c++": 0.08333333333333333
+      },
+      "phone": [
+            "+91 62824 45230",
+            "+91 91883 05357"
+      ],
+      "email": [
+            "anupamamanikandan94@gmail.com"
+      ],
+      "links": {
+            "email": [
+                  "anupamamanikandan94@gmail.com"
+            ],
+            "github": [],
+            "linkedin": [],
+            "others": []
+      }
+}

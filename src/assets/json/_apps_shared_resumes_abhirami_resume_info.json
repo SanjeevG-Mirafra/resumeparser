@@ -1,0 +1,27 @@
+{
+      "name": "ABHIRAMI RAJENDIRAN",
+      "skills": {
+            "ml": 0.2857142857142857,
+            "python": 0.2857142857142857,
+            "ip": 0.2857142857142857,
+            "rtl": 0.047619047619047616,
+            "c++": 0.047619047619047616,
+            "aci": 0.047619047619047616
+      },
+      "phone": [
+            "+91 9445896233"
+      ],
+      "email": [
+            "itsmeabhirami04@gmail.com"
+      ],
+      "links": {
+            "email": [
+                  "itsmeabhirami04@gmail.com"
+            ],
+            "github": [],
+            "linkedin": [
+                  "https://www.linkedin.com/in/abhirami-r-6abb87156/"
+            ],
+            "others": []
+      }
+}

@@ -1,0 +1,32 @@
+{
+      "name": "Abhishek Ahir",
+      "skills": {
+            "dl": 0.2727272727272727,
+            "ml": 0.18181818181818182,
+            "aws": 0.18181818181818182,
+            "saas": 0.09090909090909091,
+            "sql": 0.09090909090909091,
+            "rest": 0.09090909090909091,
+            "s3": 0.09090909090909091
+      },
+      "phone": [
+            "+91-9406857736"
+      ],
+      "email": [
+            "aahir660@gmail.com"
+      ],
+      "links": {
+            "email": [
+                  "aahir660@gmail.com"
+            ],
+            "github": [
+                  "https://github.com/kaiwakari/Text-Categorizer"
+            ],
+            "linkedin": [
+                  "https://www.linkedin.com/in/abhishek-ahir/"
+            ],
+            "others": [
+                  "https://www.quora.com/profile/Abhishek-Ahir"
+            ]
+      }
+}

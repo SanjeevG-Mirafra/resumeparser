@@ -1,0 +1,125 @@
+<div class="container-fluid upload-resume-form">
+    <h2 class="upload-new-resume">Upload New Resume</h2>
+    <div class="container-upload-resume">
+        <form [formGroup]="resumeUploadForm" #form="ngForm" id="resume-form">
+            <div class="list_item">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" name="name" formControlName="name">
+                <label for="email" class="form-label">Email</label>
+                <input type="text" id="email" name="email" formControlName="email">
+            </div>
+            <div class="list_item">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="string" id="phone" name="phone" formControlName="phone">
+                <label for="skype_id" class="form-label">Skype ID</label>
+                <input type="text" id="skype_id" name="skype_id" formControlName="skype_id">
+            </div>
+            <div class="list_item">
+                <label for="current_ctc" class="form-label">Current CTC</label>
+                <input type="text" id="current_ctc" name="current_ctc" formControlName="current_ctc">
+                <label for="linkedin" class="form-label">LinkedIn ID</label>
+                <input type="text" id="current_company" name="current_company" formControlName="current_company">
+                
+            </div>
+            <div class="list_item">
+                <label for="expected_ctc" class="form-label">Expected CTC</label>
+                <input type="text" id="expected_ctc" name="expected_ctc" formControlName="expected_ctc">
+                <label for="linkedin" class="form-label">GitHub ID</label>
+                <input type="text" id="current_company" name="current_company" formControlName="current_company">
+               
+            </div>
+            <div class="list_item">
+                <label for="current_company" class="form-label">Current Company</label>
+                <input type="text" id="current_company" name="current_company" formControlName="current_company">
+                <label for="location" class="form-label">Location Of Candidate</label>
+                <input type="text" id="location" name="location" formControlName="location">
+            </div>
+            <div class="list_item">
+                <label for="skill" class="form-label">Key Skills</label>
+                <input type="text" id="current_company" name="current_company" formControlName="current_company">
+                <label for="experience" class="form-label">Experience</label>
+                <select id="experience" name="experience" formControlName="experience" class="experience_yrs">
+                    <option value="">0</option>
+                    <option value="option_1"> 1</option>
+                    <option value="option_1"> 2</option>
+                    <option value="option_1"> 3</option>
+                    <option value="option_1"> 4</option>
+                    <option value="option_1"> 5</option>
+                    <option value="option_1"> 6</option>
+                    <option value="option_1"> 7</option>
+                    <option value="option_1"> 8</option>
+                    <option value="option_1"> 9</option>
+                    <option value="option_1">10</option>
+                </select> Yrs
+                <select id="experience" name="experience" formControlName="experience" class="experience_months">
+                    <option value="">0</option>
+                    <option value="option_1"> 1</option>
+                    <option value="option_1"> 2</option>
+                    <option value="option_1"> 3</option>
+                    <option value="option_1"> 4</option>
+                    <option value="option_1"> 5</option>
+                    <option value="option_1"> 6</option>
+                    <option value="option_1"> 7</option>
+                    <option value="option_1"> 8</option>
+                    <option value="option_1"> 9</option>
+                    <option value="option_1"> 10</option>
+                    <option value="option_1"> 11</option>
+                    <option value="option_1"> 12</option>
+
+                </select> Months
+            </div>
+            <div class="list_item">
+                <label for="prefered_location" class="form-label">Prefered Location Of Candidate</label>
+                <input type="text" id="prefered_location" name="prefered_location" formControlName="prefered_location">
+                <label for="ta_owner" class="form-label">TA Owner</label>
+                <select id="ta_owner" name="ta_owner" formControlName="ta_owner">
+                    <option value="">Please Select</option>
+                    <option value="option_1">Option 1</option>
+                    <option value="option_2">Option 2</option>
+                    <option value="option_3">Option 3</option>
+                </select>
+            </div>
+            <div class="list_item">
+               
+                <label for="notice_period" class="form-label">Notice Period</label>
+                <input type="text" id="notice_period" name="notice_period" formControlName="notice_period">
+                 
+                <label for="resume_path" class="form-label">Resume path</label>
+                <input type="text" id="resume_path" name="resume_path" formControlName="resume_path">
+            </div>
+            <div class="list_item">
+                <label for="qualification" class="form-label">Candidate's Qualification</label>
+                <textarea id="qualification" name="qualification" formControlName="qualification"></textarea>
+                <label for="requirement_name" class="form-label">Requirement name</label>
+                <textarea id="requirement_name" name="requirement_name" formControlName="requirement_name"></textarea>
+            </div>
+            <div class="list_item">
+                <label for="resume_summary" class="form-label">Summary about this resume</label>
+                <textarea id="resume_summary" name="resume_summary" formControlName="resume_summary"></textarea>
+                
+            </div>
+            <div class="list_item referral">
+                <label for="referral_of_resume" class="form-label">Referral of resume</label>
+                <input type="radio" value="employee" id="referral_of_resume" name="referral_of_resume"
+                    formControlName="referral_of_resume" (click)="selectReferral($event)">&nbsp;<b>Employee</b>
+                <input type="radio" value="portal" id="referral_of_resume" name="referral_of_resume"
+                    formControlName="referral_of_resume" (click)="selectReferral($event)">&nbsp;<b>Portal</b>
+                <input type="radio" value="agency" id="referral_of_resume" name="referral_of_resume"
+                    formControlName="referral_of_resume" (click)="selectReferral($event)">&nbsp;<b>Agency</b>
+                <input type="radio" value="direct" id="referral_of_resume" name="referral_of_resume"
+                    formControlName="referral_of_resume" (click)="selectReferral($event)">&nbsp;<b>Direct</b>
+            </div>
+            <div class="list_item">
+                <label *ngIf="referral_employee" class="form-label">Employee ID</label>
+                <label *ngIf="referral_portal" class="form-label">Portal</label>
+                <label *ngIf="referral_agency" class="form-label">Agency Name</label>
+                <input *ngIf="referral_employee || referral_portal || referral_agency" type="text" id="referred_by" name="resume_path" formControlName="referred_by">
+            </div>
+            <div class="btn-upload">
+                <input style="display: none" type="file" (change)="onFileSelected($event)" #fileInput>
+                <button class="btn btn-warning" (click)="fileInput.click()">Upload your resume</button>
+                <button class="btn btn-success" type="submit" (click)="uploadResume()">Submit your resume</button>
+            </div>
+        </form>
+    </div>
+</div>

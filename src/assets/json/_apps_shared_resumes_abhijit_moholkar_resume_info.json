@@ -1,0 +1,33 @@
+{
+      "name": "Abhijit Moholkar",
+      "skills": {
+            "ml": 0.1875,
+            "python": 0.1875,
+            "dl": 0.125,
+            "sas": 0.0625,
+            "c++": 0.0625,
+            "sql": 0.0625,
+            "svm": 0.0625,
+            "html": 0.0625,
+            "css": 0.0625,
+            "aws": 0.0625,
+            "ide": 0.0625
+      },
+      "phone": [
+            "+91 8805543165"
+      ],
+      "email": [
+            "abhijit.moholkar2@gmail.com"
+      ],
+      "links": {
+            "email": [],
+            "github": [
+                  "https://github.com/Abhijit-Moholkar"
+            ],
+            "linkedin": [
+                  "https://www.linkedin.com/in/abhijit-moholkar-6ba20083/",
+                  "https://www.linkedin.com/in/abhijit-moholkar-6ba20083/"
+            ],
+            "others": []
+      }
+}

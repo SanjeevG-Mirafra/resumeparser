@@ -1,0 +1,25 @@
+{
+      "name": "BI Professional",
+      "skills": {
+            "sql": 0.875,
+            "os": 0.0625,
+            "gps": 0.0625
+      },
+      "phone": [
+            "7601042578"
+      ],
+      "skype_id":[
+            "abc@gmail.com"
+      ],
+      "email": [
+            "achandra3579@gmail.com"
+      ],
+      "links": {
+            "email": [
+                  "achandra3579@gmail.com"
+            ],
+            "github": [],
+            "linkedin": [],
+            "others": []
+      }
+}

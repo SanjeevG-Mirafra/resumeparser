@@ -1,0 +1,29 @@
+{
+      "name": "Ajay Shekhawat",
+      "skills": {
+            "python": 0.4090909090909091,
+            "ml": 0.18181818181818182,
+            "excel": 0.18181818181818182,
+            "sql": 0.045454545454545456,
+            "html": 0.045454545454545456,
+            "css": 0.045454545454545456,
+            "aws": 0.045454545454545456,
+            "ga": 0.045454545454545456
+      },
+      "phone": [
+            "+91 7769966529"
+      ],
+      "email": [
+            "shekhawatajay8@gmail.com"
+      ],
+      "links": {
+            "email": [],
+            "github": [
+                  "https://github.com/shekheee"
+            ],
+            "linkedin": [
+                  "https://www.linkedin.com/in/ajay-shekhawat"
+            ],
+            "others": []
+      }
+}

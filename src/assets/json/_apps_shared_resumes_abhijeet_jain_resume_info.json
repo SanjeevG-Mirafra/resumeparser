@@ -1,0 +1,33 @@
+{
+      "name": "Abhijeet Jain",
+      "skills": {
+            "ml": 0.391304347826087,
+            "dl": 0.17391304347826086,
+            "python": 0.13043478260869565,
+            "tf": 0.08695652173913043,
+            "aws": 0.08695652173913043,
+            "c++": 0.043478260869565216,
+            "sql": 0.043478260869565216,
+            "ui": 0.043478260869565216
+      },
+      "phone": [
+            "+91-9691774666"
+      ],
+      "email": [
+            "jain.abhijeetaj19@gmail.com"
+      ],
+      "links": {
+            "email": [
+                  "jain.abhijeetaj19@gmail.com"
+            ],
+            "github": [
+                  "https://github.com/minchi19/Neural-Style-transfer",
+                  "https://github.com/minchi19/FIFA-19---Exploratory-Data-Analysis",
+                  "https://github.com/minchi19"
+            ],
+            "linkedin": [
+                  "https://www.linkedin.com/in/abhijeet-jain19/"
+            ],
+            "others": []
+      }
+}

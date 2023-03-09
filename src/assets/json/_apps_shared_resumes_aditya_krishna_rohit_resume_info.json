@@ -1,0 +1,22 @@
+{
+      "name": "Aditya Krishna Rohit",
+      "skills": {
+            "python": 0.2857142857142857,
+            "dbms": 0.2857142857142857,
+            "ml": 0.14285714285714285,
+            "c++": 0.14285714285714285,
+            "tf": 0.14285714285714285
+      },
+      "phone": [
+            "7981049388"
+      ],
+      "email": [
+            "rohitpak98@gmail.com"
+      ],
+      "links": {
+            "email": [],
+            "github": [],
+            "linkedin": [],
+            "others": []
+      }
+}

@@ -1,0 +1,72 @@
+.upload-resume-form {
+    padding: 1rem;
+    background-color: rgb(217, 217, 223);
+}
+
+label {
+    width: 20rem;
+    margin-left: 2rem;
+}
+
+form {
+    padding: 4rem;
+}
+
+.list_item {
+    margin-top: 1rem;
+}
+
+input,
+textarea,
+select {
+    margin-left: 1rem;
+    margin-right: 10rem;
+}
+
+#qualification {
+    height: 4rem;
+}
+
+textarea {
+    width: 178px;
+    height: 78px;
+}
+
+select {
+    width: 178px;
+    height: 25px;
+}
+
+button {
+    margin-top: 2rem;
+    margin-left: 38rem;
+}
+
+.experience_yrs {
+    width: 71px;
+    margin-right: 5px;
+}
+
+.experience_months {
+    width: 71px;
+    margin-right: 5px;
+    margin-left: 3px;
+}
+
+#referral_of_resume {
+    column-gap: 1rem;
+    margin: 2px 7px 0px 25px;
+}
+
+.form-label {
+    width: 30rem;
+}
+
+.referral {
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+}
+.upload-new-resume{
+    text-align: center;
+    color: rgb(22, 22, 94);
+}

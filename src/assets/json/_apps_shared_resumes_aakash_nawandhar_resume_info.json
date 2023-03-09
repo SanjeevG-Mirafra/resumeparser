@@ -1,0 +1,25 @@
+{
+      "name": "AAKASH NAWANDHAR",
+      "skills": {
+            "sql": 0.42105263157894735,
+            "python": 0.21052631578947367,
+            "adf": 0.21052631578947367,
+            "aws": 0.05263157894736842,
+            "ide": 0.05263157894736842,
+            "xml": 0.05263157894736842
+      },
+      "phone": [
+            "7013748224"
+      ],
+      "email": [
+            "aknawandhar@gmail.com"
+      ],
+      "links": {
+            "email": [
+                  "aknawandhar@gmail.com"
+            ],
+            "github": [],
+            "linkedin": [],
+            "others": []
+      }
+}
