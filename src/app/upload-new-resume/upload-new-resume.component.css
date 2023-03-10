@@ -4,24 +4,32 @@
 }
 
 label {
-    width: 20rem;
-    margin-left: 2rem;
+  display: inline-block;
+        width: 150px;
+        text-align: right;
+        margin-right: 20px;
+        font-size:large;
 }
+input[required] + label:after,span {
+  content: '*';
+  color: red;
 
+}
 form {
-    padding: 4rem;
+    padding: 2rem;
+    font-weight:bold
 }
 
 .list_item {
     margin-top: 1rem;
 }
 
-input,
+/* input,
 textarea,
 select {
     margin-left: 1rem;
     margin-right: 10rem;
-}
+} */
 
 #qualification {
     height: 4rem;
