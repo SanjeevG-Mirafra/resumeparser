@@ -1,3 +1,4 @@
+import { ElementRef } from '@angular/core';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { FileUploadService } from '../file-upload.service';
@@ -14,7 +15,8 @@ export class UploadNewResumeComponent {
   referral_agency: boolean = false;
   selectedFile: any;
 
-  constructor(private fileUploadService: FileUploadService) { }
+
+  constructor(private fileUploadService: FileUploadService, private elementRef: ElementRef) { }
 
   ngOnInit(): void {
     this.resumeUploadForm = new FormGroup({
@@ -63,7 +65,28 @@ export class UploadNewResumeComponent {
     }
   }
 
-  onFileSelected(event: any) {
+  onChange(event){
     this.selectedFile = event.target.files[0];
+    var reader = new FileReader();
+    reader.onload = this.onReaderLoad.bind(this);
+    reader.readAsText(event.target.files[0]);
   }
+
+  onReaderLoad(event){
+    var obj = JSON.parse(event.target.result);
+    this.elementRef.nativeElement.querySelector('.name').value = obj?.name;
+    this.elementRef.nativeElement.querySelector('.email').value = obj?.email;
+    this.elementRef.nativeElement.querySelector('.phone').value = obj?.phone;
+    this.elementRef.nativeElement.querySelector('.skype_id').value = obj?.skype_id;
+    this.elementRef.nativeElement.querySelector('.current_ctc').value = obj?.current_ctc;
+    this.elementRef.nativeElement.querySelector('.linkedin_id').value = obj?.linkedin_id;
+    this.elementRef.nativeElement.querySelector('.expected_ctc').value = obj?.expected_ctc;
+    this.elementRef.nativeElement.querySelector('.github_id').value = obj.github_id;
+    this.elementRef.nativeElement.querySelector('.current_company').value = obj?.current_company;
+    this.elementRef.nativeElement.querySelector('.location').value = obj?.location;
+    this.elementRef.nativeElement.querySelector('.skills').value = obj?.skills;
+    this.elementRef.nativeElement.querySelector('.prefered_location').value = obj?.prefered_location;
+    this.elementRef.nativeElement.querySelector('.notice_period').value = obj?.notice_period;
+    this.elementRef.nativeElement.querySelector('.resume_path').value = obj?.resume_path;
+}
 }

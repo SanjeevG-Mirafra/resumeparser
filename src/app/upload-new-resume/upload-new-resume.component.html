@@ -4,17 +4,17 @@
     <form [formGroup]="resumeUploadForm" #form="ngForm" id="resume-form">
       <div class="list_item">
         <label for="name" class="form-label">Name<span>*</span>:-</label >
-
-        <input type="text" required id="name" name="name" formControlName="name" required />
+        <input type="text" required class="name" id="name" name="name" formControlName="name" required />
         <label for="email" class="form-label">Email:-</label>
-        <input type="email"  required id="email" name="email" formControlName="email" required/>
+        <input type="email"  required class="email" id="email" name="email" formControlName="email" required/>
       </div>
       <div class="list_item">
         <label for="phone" class="form-label">Phone Number:-<span>*</span></label>
-        <input type="string"  id="phone" name="phone" formControlName="phone" />
+        <input type="string" required class="phone" id="phone" name="phone" formControlName="phone" />
         <label for="skype_id" class="form-label">Skype ID:-</label>
         <input
           type="text"
+          class="skype_id"
           id="skype_id"
           name="skype_id"
           formControlName="skype_id"
@@ -25,16 +25,18 @@
         <label for="current_ctc" class="form-label">Current CTC:-</label>
         <input
           type="text"
+          class="current_ctc"
           id="current_ctc"
           name="current_ctc"
           formControlName="current_ctc"
 
         />
-        <label for="linkedin" class="form-label">LinkedIn ID:-</label>
+        <label for="linkedin_id" class="form-label">LinkedIn ID:-</label>
         <input
           type="text"
-          id="current_company"
-          name="current_company"
+          class="linkedin_id"
+          id="linkedin_id"
+          name="linkedin_id"
           formControlName="current_company"
 
         />
@@ -43,15 +45,17 @@
         <label for="expected_ctc" class="form-label">Expected CTC:-</label>
         <input
           type="text"
+          class="expected_ctc"
           id="expected_ctc"
           name="expected_ctc"
           formControlName="expected_ctc"
         />
-        <label for="linkedin" class="form-label">GitHub ID:-</label>
+        <label for="github_id" class="form-label">GitHub ID:-</label>
         <input
           type="text"
-          id="current_company"
-          name="current_company"
+          class="github_id"
+          id="github_id"
+          name="github_id"
           formControlName="current_company"
         />
       </div>
@@ -61,6 +65,7 @@
         >
         <input
           type="text"
+          class="current_company"
           id="current_company"
           name="current_company"
           formControlName="current_company"
@@ -68,17 +73,19 @@
         <label for="location" class="form-label">Location Of Candidate:-</label>
         <input
           type="text"
+          class="location"
           id="location"
           name="location"
           formControlName="location"
         />
       </div>
       <div class="list_item">
-        <label for="skill" class="form-label">Key Skills:-</label>
+        <label for="skills" class="form-label">Key Skills:-</label>
         <input
           type="text"
-          id="current_company"
-          name="current_company"
+          class="skills"
+          id="skills"
+          name="skills"
           formControlName="current_company"
         />
         <label for="experience" class="form-label">Experience:-</label>
@@ -86,19 +93,19 @@
           id="experience"
           name="experience"
           formControlName="experience"
-          class="experience_yrs"
+          class="experience_years"
         >
           <option value="">0</option>
           <option value="option_1">1</option>
-          <option value="option_1">2</option>
-          <option value="option_1">3</option>
-          <option value="option_1">4</option>
-          <option value="option_1">5</option>
-          <option value="option_1">6</option>
-          <option value="option_1">7</option>
-          <option value="option_1">8</option>
-          <option value="option_1">9</option>
-          <option value="option_1">10</option>
+          <option value="option_2">2</option>
+          <option value="option_3">3</option>
+          <option value="option_4">4</option>
+          <option value="option_5">5</option>
+          <option value="option_6">6</option>
+          <option value="option_7">7</option>
+          <option value="option_8">8</option>
+          <option value="option_9">9</option>
+          <option value="option_10">10</option>
         </select>
         Yrs
         <select
@@ -109,17 +116,16 @@
         >
           <option value="">0</option>
           <option value="option_1">1</option>
-          <option value="option_1">2</option>
-          <option value="option_1">3</option>
-          <option value="option_1">4</option>
-          <option value="option_1">5</option>
-          <option value="option_1">6</option>
-          <option value="option_1">7</option>
-          <option value="option_1">8</option>
-          <option value="option_1">9</option>
-          <option value="option_1">10</option>
-          <option value="option_1">11</option>
-          <option value="option_1">12</option>
+          <option value="option_2">2</option>
+          <option value="option_3">3</option>
+          <option value="option_4">4</option>
+          <option value="option_5">5</option>
+          <option value="option_6">6</option>
+          <option value="option_7">7</option>
+          <option value="option_8">8</option>
+          <option value="option_9">9</option>
+          <option value="option_10">10</option>
+          <option value="option_11">11</option>
         </select>
         Months
       </div>
@@ -129,12 +135,13 @@
         >
         <input
           type="text"
+          class="prefered_location"
           id="prefered_location"
           name="prefered_location"
           formControlName="prefered_location"
         />
         <label for="ta_owner" class="form-label">TA Owner</label>
-        <select id="ta_owner" name="ta_owner" formControlName="ta_owner">
+        <select class="ta_owner" id="ta_owner" name="ta_owner" formControlName="ta_owner">
           <option value="">Please Select</option>
           <option value="option_1">Option 1</option>
           <option value="option_2">Option 2</option>
@@ -145,6 +152,7 @@
         <label for="notice_period" class="form-label">Notice Period:-</label>
         <input
           type="text"
+          class="notice_period"
           id="notice_period"
           name="notice_period"
           formControlName="notice_period"
@@ -153,6 +161,7 @@
         <label for="resume_path" class="form-label">Resume path:-<span>*</span></label>
         <input
           type="text"
+          class="resume_path"
           id="resume_path"
           name="resume_path"
           formControlName="resume_path"
@@ -241,7 +250,7 @@
         <input
           style="display: none"
           type="file"
-          (change)="onFileSelected($event)"
+          (change)="onChange($event)"
           #fileInput
         />
         <button class="btn btn-warning" (click)="fileInput.click()">
