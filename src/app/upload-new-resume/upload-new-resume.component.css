@@ -1,28 +1,51 @@
-.upload-resume-form {
-    padding: 1rem;
-    background-color: rgb(217, 217, 223);
+.box{
+  background-color: rgb(129, 200, 229);
+}
+.d-flex{
+  background-color: rgb(178, 220, 236);
+}
+h1{
+  color: rgb(7, 46, 219);
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-style: italic;
+  text-decoration: underline;
 }
 
-label {
+input[required] + label:after,span {
+  color: red;
+}
+
+.modal-title-success{
+  color: green;
+}
+
+.modal-title-danger{
+  color: red;
+}
+form {
+    font-size: large;
+    padding: 2rem;
+    font-weight: bold;
+}
+.spinner-border{
+  -ms-flex-align: center;
+}
+/* .upload-resume-form {
+    padding: 1rem;
+    background-color: rgb(217, 217, 223);
+} */
+
+/* label {
   display: inline-block;
         width: 150px;
         text-align: right;
         margin-right: 20px;
         font-size:large;
-}
-input[required] + label:after,span {
-  content: '*';
-  color: red;
+} */
 
-}
-form {
-    padding: 2rem;
-    font-weight:bold
-}
-
-.list_item {
+/* .list_item {
     margin-top: 1rem;
-}
+} */
 
 /* input,
 textarea,
@@ -31,50 +54,51 @@ select {
     margin-right: 10rem;
 } */
 
-#qualification {
+/* #qualification {
     height: 4rem;
-}
+} */
 
+/*
 textarea {
     width: 178px;
     height: 78px;
-}
+} */
 
-select {
+/* select {
     width: 178px;
     height: 25px;
-}
+} */
 
-button {
+/* button {
     margin-top: 2rem;
     margin-left: 38rem;
-}
+} */
 
-.experience_yrs {
+/* .experience_yrs {
     width: 71px;
     margin-right: 5px;
-}
+} */
 
-.experience_months {
+/* .experience_months {
     width: 71px;
     margin-right: 5px;
     margin-left: 3px;
-}
+} */
 
-#referral_of_resume {
+/* #referral_of_resume {
     column-gap: 1rem;
     margin: 2px 7px 0px 25px;
-}
+} */
 
-.form-label {
+/* .form-label {
     width: 30rem;
-}
+} */
 
-.referral {
+/* .referral {
     margin-top: 4rem;
     margin-bottom: 5rem;
-}
-.upload-new-resume{
+} */
+/* .upload-new-resume{
     text-align: center;
     color: rgb(22, 22, 94);
-}
+} */

@@ -1,16 +1,320 @@
-<div class="container-fluid upload-resume-form">
+<div class="d-flex">
+  <div class="container align-items-center">
+    <h1 class="text-center title-color mt-2 mb-3">Candidate Information Form</h1>
+    <div class="row justify-content-center">
+      <div class="col-md-12 box shadow rounded">
+        <div class="mt-3 uploadResumeForm">
+          <form [formGroup]="resumeUploadForm" #form="ngForm" (ngSubmit)="submitResume(form)" id="resume-form">
+            <div class="row mb-3">
+              <label for="name" class="col-sm-3 col-form-label">Name : <span>*</span></label>
+              <div class="col-sm-9">
+                <input type="text" class="name form-control" id="name" [ngClass]="{'is-invalid': resumeUploadForm.controls['name'].errors && resumeUploadForm.controls['name'].touched || resumeUploadForm.controls['name'].errors && form.submitted,
+                                   'is-valid': resumeUploadForm.controls['name'].valid }" formControlName="name">
+                <div class="invalid-feedback"
+                  *ngIf="resumeUploadForm.controls['name'].errors && resumeUploadForm.controls['name'].touched || resumeUploadForm.controls['name'].errors && form.submitted">
+                  <div>* Name is required!</div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="email" class="col-sm-3 col-form-label">Email : <span>*</span></label>
+              <div class="col-sm-9">
+                <input type="email" class="email form-control" [ngClass]="{'is-invalid': (resumeUploadForm.controls['email'].errors && resumeUploadForm.controls['email'].touched) ||
+                                                (resumeUploadForm.controls['email'].errors && form.submitted),
+                                  'is-valid': resumeUploadForm.controls['email'].valid }" id="email"
+                  formControlName="email">
+                <div class="invalid-feedback"
+                  *ngIf="(resumeUploadForm.controls['email'].errors && resumeUploadForm.controls['email'].touched) || (resumeUploadForm.controls['email'].errors && form.submitted)">
+                  <div *ngIf="resumeUploadForm.controls['email'].errors['required']">* Email is required!</div>
+                  <div *ngIf="resumeUploadForm.controls['email'].errors['pattern']">* Please enter a valid email!</div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="phone" class="col-sm-3 col-form-label">Phone Number: <span>*</span></label>
+              <div class="col-sm-9">
+                <input type="tel" class="phone form-control" id="phone" [ngClass]="{'is-invalid': resumeUploadForm.controls['phone'].errors && resumeUploadForm.controls['phone'].touched || resumeUploadForm.controls['phone'].errors && form.submitted,
+                                   'is-valid': resumeUploadForm.controls['phone'].valid }" formControlName="phone">
+                <div class="invalid-feedback"
+                  *ngIf="resumeUploadForm.controls['phone'].errors && resumeUploadForm.controls['phone'].touched || resumeUploadForm.controls['phone'].errors && form.submitted">
+                  <div *ngIf="resumeUploadForm.controls['phone'].errors['required']">* Phone number is required!</div>
+                  <div
+                    *ngIf="resumeUploadForm.controls['phone'].errors['pattern'] || resumeUploadForm.controls['phone'].errors['maxlength']">
+                    * Please enter a valid phone number!</div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="skills" class="col-sm-3 col-form-label">Skills : <span>*</span></label>
+              <div class="col-sm-9">
+                <input type="text" class="skills form-control" id="skills" [ngClass]="{'is-invalid': resumeUploadForm.controls['skills'].errors && resumeUploadForm.controls['skills'].touched || resumeUploadForm.controls['skills'].errors && form.submitted,
+                                   'is-valid': resumeUploadForm.controls['skills'].valid }" formControlName="skills">
+                <div class="invalid-feedback"
+                  *ngIf="resumeUploadForm.controls['skills'].errors && resumeUploadForm.controls['skills'].touched || resumeUploadForm.controls['skills'].errors && form.submitted">
+                  <div>* Skills are required!</div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="skype_id" class="col-sm-3 col-form-label">Skype ID :</label>
+              <div class="col-sm-9">
+                <input type="text" class="skype_id form-control" id="skype_id" formControlName="skype_id">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="linkedin" class="col-sm-3 col-form-label">LinkedIn ID :</label>
+              <div class="col-sm-9">
+                <input type="text" class="linkedin form-control" id="linkedin" formControlName="linkedin">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="github" class="col-sm-3 col-form-label">GitHub ID :</label>
+              <div class="col-sm-9">
+                <input type="text" class="github form-control" id="github" formControlName="github">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="current_company" class="col-sm-3 col-form-label">Current Company :</label>
+              <div class="col-sm-9">
+                <input type="text" class="current_company form-control" id="current_company"
+                  formControlName="current_company">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="current_ctc" class="col-sm-3 col-form-label">Current CTC :</label>
+              <div class="col-sm-9">
+                <input type="text" class="current_ctc form-control" id="current_ctc" formControlName="current_ctc">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="expected_ctc" class="col-sm-3 col-form-label">Expected CTC :</label>
+              <div class="col-sm-9">
+                <input type="text" class="expected_ctc form-control" id="expected_ctc" formControlName="expected_ctc">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="current_location" class="col-sm-3 col-form-label">Current Location Of Candidate :</label>
+              <div class="col-sm-9">
+                <input type="text" class="current_location form-control" id="current_location"
+                  formControlName="current_location">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="preferred_location" class="col-sm-3 col-form-label">Preferred Location Of Candidate :</label>
+              <div class="col-sm-9">
+                <input type="text" class="preferred_location form-control" id="preferred_location"
+                  formControlName="preferred_location">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="experience" class="col-sm-3 col-form-label">Total Experience :</label>
+              <div class="col-sm-2">
+                <select name="experience_years" id="experience_years" class="experience_years form-control">
+                  <option value="0 Years" defaultSelected>0</option>
+                  <option value="1 Year">1</option>
+                  <option value="2 Years">2</option>
+                  <option value="3 Years">3</option>
+                  <option value="4 Years">4</option>
+                  <option value="5 Years">5</option>
+                  <option value="6 Years">6</option>
+                  <option value="7 Years">7</option>
+                  <option value="8 Years">8</option>
+                  <option value="9 Years">9</option>
+                  <option value="10 Years">10</option>
+                </select>
+              </div>
+              Years
+              <div class="col-sm-2">
+                <select name="experience_months" id="experience_months" class="experience_months form-control">
+                  <option value="0 Months" defaultSelected>0</option>
+                  <option value="1 Month">1</option>
+                  <option value="2 Months">2</option>
+                  <option value="3 Months">3</option>
+                  <option value="4 Months">4</option>
+                  <option value="5 Months">5</option>
+                  <option value="6 Months">6</option>
+                  <option value="7 Months">7</option>
+                  <option value="8 Months">8</option>
+                  <option value="9 Months">9</option>
+                  <option value="10 Months">10</option>
+                  <option value="11 Months">11</option>
+                </select>
+              </div>
+              Months
+            </div>
+            <div class="row mb-3">
+              <label for="ta_owner" class="col-sm-3 col-form-label">TA Owner :</label>
+              <div class="col-sm-5">
+                <select name="ta_owner" id="ta_owner" class="ta_owner form-control">
+                  <option [defaultSelected]>Please Select</option>
+                  <option value="option_1">1</option>
+                  <option value="option_2">2</option>
+                  <option value="option_3">3</option>
+                </select>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="notice_period" class="col-sm-3 col-form-label">Notice Period :</label>
+              <div class="col-sm-9">
+                <input type="text" class="notice_period form-control" id="notice_period"
+                  formControlName="notice_period">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="resume_path" class="col-sm-3 col-form-label">Resume Path : <span>*</span></label>
+              <div class="col-sm-9">
+                <input type="text" class="resume_path form-control" id="resume_path" [ngClass]="{'is-invalid': resumeUploadForm.controls['resume_path'].errors && resumeUploadForm.controls['resume_path'].touched || resumeUploadForm.controls['resume_path'].errors && form.submitted,
+                                   'is-valid': resumeUploadForm.controls['resume_path'].valid }"
+                  formControlName="resume_path">
+                <div class="invalid-feedback"
+                  *ngIf="resumeUploadForm.controls['resume_path'].errors && resumeUploadForm.controls['resume_path'].touched || resumeUploadForm.controls['resume_path'].errors && form.submitted">
+                  <div>* Resume path is required!</div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="qualification" class="col-sm-3 col-form-label">Candidate Qualification :</label>
+              <div class="col-sm-9">
+                <textarea type="text" class="qualification form-control" id="qualification"
+                  formControlName="qualification"></textarea>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="requirement_name" class="col-sm-3 col-form-label">Requirement Name :</label>
+              <div class="col-sm-9">
+                <textarea type="text" class="requirement_name form-control" id="requirement_name"
+                  formControlName="requirement_name"></textarea>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="resume_summary" class="col-sm-3 col-form-label">Resume Summary :</label>
+              <div class="col-sm-9">
+                <textarea type="text" class="resume_summary form-control" id="resume_summary"
+                  formControlName="resume_summary"></textarea>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Referral Of Resume : <span>*</span></label>
+              <div class="col-sm-6">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input " type="radio" id="referral_of_resume_by_employee" value="employee"
+                    [ngClass]="{'is-invalid': resumeUploadForm.controls['referral_of_resume'].errors && resumeUploadForm.controls['referral_of_resume'].touched || resumeUploadForm.controls['referral_of_resume'].errors && form.submitted,
+                                  'is-valid': resumeUploadForm.controls['referral_of_resume'].valid }"
+                    formControlName="referral_of_resume">
+                  <label class="form-label" for="referral_of_resume">Employee</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" id="referral_of_resume_by_portal" value="portal"
+                    [ngClass]="{'is-invalid': resumeUploadForm.controls['referral_of_resume'].errors && resumeUploadForm.controls['referral_of_resume'].touched || resumeUploadForm.controls['referral_of_resume'].errors && form.submitted,
+                                     'is-valid': resumeUploadForm.controls['referral_of_resume'].valid }"
+                    formControlName="referral_of_resume">
+                  <label class="form-label" for="referral_of_resume">Portal</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" id="referral_of_resume_by_agency" value="agency"
+                    [ngClass]="{'is-invalid': resumeUploadForm.controls['referral_of_resume'].errors && resumeUploadForm.controls['referral_of_resume'].touched || resumeUploadForm.controls['referral_of_resume'].errors && form.submitted,
+                                     'is-valid': resumeUploadForm.controls['referral_of_resume'].valid }"
+                    formControlName="referral_of_resume">
+                  <label class="form-label" for="referral_of_resume">Agency</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" id="referral_of_resume_is_direct" value="direct"
+                    [ngClass]="{'is-invalid': resumeUploadForm.controls['referral_of_resume'].errors && resumeUploadForm.controls['referral_of_resume'].touched || resumeUploadForm.controls['referral_of_resume'].errors && form.submitted,
+                                     'is-valid': resumeUploadForm.controls['referral_of_resume'].valid }"
+                    formControlName="referral_of_resume">
+                  <label class="form-label" for="referral_of_resume">Direct</label>
+                </div>
+                <div>
+                  <label *ngIf="resumeUploadForm.controls['referral_of_resume'].value === 'employee'"
+                    class="form-label">Employee ID : <span>*</span> </label>
+                  <label *ngIf="resumeUploadForm.controls['referral_of_resume'].value === 'portal'"
+                    class="form-label">Portal Name : <span>*</span> </label>
+                  <label *ngIf="resumeUploadForm.controls['referral_of_resume'].value === 'agency'"
+                    class="form-label">Agency Name : <span>*</span> </label>
+                  <input type="text" class="form-label form-control"
+                    *ngIf="resumeUploadForm.controls['referral_of_resume'].value === 'portal' || resumeUploadForm.controls['referral_of_resume'].value === 'agency'"
+                    [ngClass]="{'is-invalid': resumeUploadForm.controls['referred_by'].errors && resumeUploadForm.controls['referred_by'].touched || resumeUploadForm.controls['referred_by'].errors && form.submitted,
+                                'is-valid': resumeUploadForm.controls['referred_by'].valid }"
+                    formControlName="referred_by">
+                  <input type="number" class="form-label form-control"
+                    *ngIf="resumeUploadForm.controls['referral_of_resume'].value === 'employee'"
+                    [ngClass]="{'is-invalid': resumeUploadForm.controls['referred_by'].errors && resumeUploadForm.controls['referred_by'].touched || resumeUploadForm.controls['referred_by'].errors && form.submitted,
+                                'is-valid': resumeUploadForm.controls['referred_by'].valid }"
+                    formControlName="referred_by">
+                  <div class="invalid-feedback"
+                    *ngIf="resumeUploadForm.controls['referred_by'].errors && resumeUploadForm.controls['referred_by'].touched || resumeUploadForm.controls['referred_by'].errors && form.submitted">
+                    <div>* This field is required!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <input type="file" style="display: none;" (change)="onChange($event)" #fileInput>
+              <button [disabled]="resumeUploaded" class="btn btn-primary mx-5" type="button" (click)="fileInput.click()">
+                <ng-container *ngIf="!resumeUploaded else uploading">
+                  Upload Resume
+                </ng-container>
+                <ng-template #uploading>
+                  <div class="spinner-border text-light" role="status"></div>
+                </ng-template>
+              </button>
+              <button class="btn btn-success mx-5" type="submit" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop">Submit Form</button>
+            </div>
+            <!-- Pop up -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+              aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <ng-container *ngIf="form.valid else errorTemp">
+                    <div class="modal-header">
+                      <h5 class="modal-title modal-title-success" id="staticBackdropLabel">Thank You !</h5>
+                      <button type="button" class="btn-close" (click)="form.resetForm()" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                      Your have successfully submitted the form!
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" (click)="form.resetForm()"
+                        data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </ng-container>
+                </div>
+                <ng-template #errorTemp>
+                  <div class="modal-header">
+                    <h5 class="modal-title modal-title-danger" id="staticBackdropLabel">Alert !</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body text-center">
+                    Please fill in all mandatory fields!
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </ng-template>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container-fluid upload-resume-form">
   <h2 class="upload-new-resume">Upload New Resume</h2>
   <div class="container-upload-resume">
     <form [formGroup]="resumeUploadForm" #form="ngForm" id="resume-form">
       <div class="list_item">
         <label for="name" class="form-label">Name<span>*</span>:-</label >
-        <input type="text" required class="name" id="name" name="name" formControlName="name" required />
+        <input type="text" class="name" id="name" name="name" formControlName="name" required />
         <label for="email" class="form-label">Email:-</label>
-        <input type="email"  required class="email" id="email" name="email" formControlName="email" required/>
+        <input type="email" class="email" id="email" name="email" formControlName="email" required/>
       </div>
       <div class="list_item">
         <label for="phone" class="form-label">Phone Number:-<span>*</span></label>
-        <input type="string" required class="phone" id="phone" name="phone" formControlName="phone" />
+        <input type="text" class="phone" id="phone" name="phone" formControlName="phone" required/>
         <label for="skype_id" class="form-label">Skype ID:-</label>
         <input
           type="text"
@@ -31,12 +335,12 @@
           formControlName="current_ctc"
 
         />
-        <label for="linkedin_id" class="form-label">LinkedIn ID:-</label>
+        <label for="linkedin" class="form-label">LinkedIn ID:-</label>
         <input
           type="text"
-          class="linkedin_id"
-          id="linkedin_id"
-          name="linkedin_id"
+          class="linkedin"
+          id="linkedin"
+          name="linkedin"
           formControlName="current_company"
 
         />
@@ -50,12 +354,12 @@
           name="expected_ctc"
           formControlName="expected_ctc"
         />
-        <label for="github_id" class="form-label">GitHub ID:-</label>
+        <label for="github" class="form-label">GitHub ID:-</label>
         <input
           type="text"
-          class="github_id"
-          id="github_id"
-          name="github_id"
+          class="github"
+          id="github"
+          name="github"
           formControlName="current_company"
         />
       </div>
@@ -92,40 +396,40 @@
         <select
           id="experience"
           name="experience"
-          formControlName="experience"
+          formControlName="experience_years"
           class="experience_years"
         >
-          <option value="">0</option>
-          <option value="option_1">1</option>
-          <option value="option_2">2</option>
-          <option value="option_3">3</option>
-          <option value="option_4">4</option>
-          <option value="option_5">5</option>
-          <option value="option_6">6</option>
-          <option value="option_7">7</option>
-          <option value="option_8">8</option>
-          <option value="option_9">9</option>
-          <option value="option_10">10</option>
+          <option value="0 Years">0</option>
+          <option value="1 Year">1</option>
+          <option value="2 Years">2</option>
+          <option value="3 Years">3</option>
+          <option value="4 Years">4</option>
+          <option value="5 Years">5</option>
+          <option value="6 Years">6</option>
+          <option value="7 Years">7</option>
+          <option value="8 Years">8</option>
+          <option value="9 Years">9</option>
+          <option value="10 Years">10</option>
         </select>
         Yrs
         <select
           id="experience"
           name="experience"
-          formControlName="experience"
+          formControlName="experience_months"
           class="experience_months"
         >
-          <option value="">0</option>
-          <option value="option_1">1</option>
-          <option value="option_2">2</option>
-          <option value="option_3">3</option>
-          <option value="option_4">4</option>
-          <option value="option_5">5</option>
-          <option value="option_6">6</option>
-          <option value="option_7">7</option>
-          <option value="option_8">8</option>
-          <option value="option_9">9</option>
-          <option value="option_10">10</option>
-          <option value="option_11">11</option>
+          <option value="0 Months">0</option>
+          <option value="1 Month">1</option>
+          <option value="2 Months">2</option>
+          <option value="3 Months">3</option>
+          <option value="4 Months">4</option>
+          <option value="5 Months">5</option>
+          <option value="6 Months">6</option>
+          <option value="7 Months">7</option>
+          <option value="8 Months">8</option>
+          <option value="9 Months">9</option>
+          <option value="10 Months">10</option>
+          <option value="11 Months">11</option>
         </select>
         Months
       </div>
@@ -166,7 +470,6 @@
           name="resume_path"
           formControlName="resume_path"
           required
-
         />
       </div>
       <div class="list_item">
@@ -175,6 +478,7 @@
         >
         <textarea
           id="qualification"
+          class="qualification"
           name="qualification"
           formControlName="qualification"
         ></textarea>
@@ -183,6 +487,7 @@
         >
         <textarea
           id="requirement_name"
+          class="requirement_name"
           name="requirement_name"
           formControlName="requirement_name"
         ></textarea>
@@ -193,6 +498,7 @@
         >
         <textarea
           id="resume_summary"
+          class="resume_summary"
           name="resume_summary"
           formControlName="resume_summary"
         ></textarea>
@@ -256,10 +562,10 @@
         <button class="btn btn-warning" (click)="fileInput.click()">
           Upload your resume
         </button>
-        <button class="btn btn-success" type="submit" [disabled]="!resumeUploadForm.valid" (click)="uploadResume()">
+        <button class="btn btn-success" type="submit"  (click)="submitResume()">
           Submit your resume
         </button>
       </div>
     </form>
   </div>
-</div>
+</div> -->

@@ -21,7 +21,7 @@
     "@angular/router": "^15.1.0",
     "@ezfinhub-dev/angular-common-http": "^1.0.0",
     "@types/node": "^18.11.19",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^5.2.2",
     "jquery": "^3.6.3",
     "pdfjs-dist": "^3.3.122",
     "resume-parser": "^1.1.0",

@@ -6,11 +6,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class FileUploadService {
-  baseApiUrl = 'https://file.io';
+  Api = 'http://192.168.0.207:5001/parse_resume';
+  user: any;
+
   constructor(private http: HttpClient) { }
+
   upload(file): Observable<any> {
     const formData = new FormData();
     formData.append('file', file, file.name);
-    return this.http.post(this.baseApiUrl, formData);
+    return this.http.get(this.Api);
   }
 }
