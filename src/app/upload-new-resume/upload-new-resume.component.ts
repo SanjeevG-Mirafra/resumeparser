@@ -52,8 +52,8 @@ export class UploadNewResumeComponent  {
     const formData = new FormData();
     formData.append('resume', event.target.files[0]);
     this.resumeUploaded = true;
-    // this.http.post("http://192.168.1.29:5001/parse_resume", formData)
-    this.http.post("http://106.51.77.156:5001/parse_resume", formData)
+    this.http.post("http://192.168.1.29:5001/parse_resume", formData)
+    // this.http.post("http://106.51.77.156:5001/parse_resume", formData)
       .subscribe((data: any)=>{
       const fetchedData = {
         ...data,

@@ -15,6 +15,9 @@ input[required] + label:after,span {
   color: red;
 }
 
+.spinner-border{
+  color: white;
+}
 .modal-title-success{
   color: green;
 }
@@ -22,14 +25,13 @@ input[required] + label:after,span {
 .modal-title-danger{
   color: red;
 }
-form {
+
+form{
     font-size: large;
     padding: 2rem;
     font-weight: bold;
 }
-.spinner-border{
-  -ms-flex-align: center;
-}
+
 /* .upload-resume-form {
     padding: 1rem;
     background-color: rgb(217, 217, 223);
