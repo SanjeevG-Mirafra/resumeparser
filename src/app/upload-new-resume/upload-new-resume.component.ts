@@ -19,41 +19,41 @@ export class UploadNewResumeComponent  {
 
   ngOnInit(): void {
     this.resumeUploadForm = new FormGroup({
+      resume_upload : new FormControl('',[Validators.required]),
       name: new FormControl('',[Validators.required]),
       email: new FormControl('',[Validators.required, Validators.pattern('^[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]),
       phone: new FormControl('',[Validators.required, Validators.maxLength(20), Validators.pattern('^[0-9,+-]+$')]),
       skype_id: new FormControl(),
-      expected_ctc: new FormControl(),
-      current_ctc: new FormControl(),
-      notice_period: new FormControl(),
+      expected_ctc: new FormControl('', [Validators.required]),
+      current_ctc: new FormControl('', [Validators.required]),
+      notice_period: new FormControl('', [Validators.required]),
       experience_years: new FormControl(),
       github: new FormControl(),
       linkedin: new FormControl(),
       preferred_location: new FormControl(),
       current_location: new FormControl(),
       experience_months: new FormControl(),
-      current_company: new FormControl(),
+      current_company: new FormControl('', [Validators.required]),
       skills: new FormControl('',[Validators.required]),
       social_media: new FormControl(),
       location: new FormControl(),
-      prefered_location: new FormControl(),
       qualification: new FormControl(),
       ta_owner: new FormControl(''),
       resume_summary: new FormControl(),
-      resume_path: new FormControl('',[Validators.required]),
       requirement_name: new FormControl(),
       referral_of_resume: new FormControl('',[Validators.required]),
-      referred_by: new FormControl('',[Validators.required])
+      referred_by: new FormControl('')
     });
+    this.referralValidatorUpdator();
   }
 
-  onChange(event){
+  upload(event){
     //If we upload pdf file then.....
     const formData = new FormData();
-    formData.append('resume', event.target.files[0]);
+    formData.append('resume', event.files[0]);
     this.resumeUploaded = true;
-    this.http.post("http://192.168.1.29:5001/parse_resume", formData)
-    // this.http.post("http://106.51.77.156:5001/parse_resume", formData)
+    // this.http.post("http://192.168.1.29:5001/parse_resume", formData)
+    this.http.post("http://106.51.77.156:5001/parse_resume", formData)
       .subscribe((data: any)=>{
       const fetchedData = {
         ...data,
@@ -63,7 +63,7 @@ export class UploadNewResumeComponent  {
       this.resumeUploaded = false;
       // console.log(fetchedData, this.hyperLinkMapper(data?.hyperlinks));
       this.resumeUploadForm.patchValue(fetchedData);
-      console.log(fetchedData);
+      console.log();
     })
   }
 
@@ -75,6 +75,13 @@ export class UploadNewResumeComponent  {
       }
     })
     return hyperLinkedObj;
+  }
+
+  referralValidatorUpdator(){
+    this.resumeUploadForm.controls["referral_of_resume"].valueChanges.subscribe((value)=>{
+        this.resumeUploadForm.controls["referred_by"].setValidators(value === 'direct' ? [] : [Validators.required]);
+        this.resumeUploadForm.controls["referred_by"].updateValueAndValidity({emitEvent: false});
+    });
   }
 
   submitResume(formRef) {

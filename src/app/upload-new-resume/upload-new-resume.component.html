@@ -1,10 +1,31 @@
 <div class="d-flex">
   <div class="container align-items-center">
-    <h1 class="text-center title-color mt-2 mb-3">Candidate Information Form</h1>
+    <h1 class="text-center title-color mt-2 mb-3">Candidate's Information Form</h1>
     <div class="row justify-content-center">
       <div class="col-md-12 box shadow rounded">
         <div class="mt-3 uploadResumeForm">
           <form [formGroup]="resumeUploadForm" #form="ngForm" (ngSubmit)="submitResume(form)" id="resume-form">
+            <div class="row mb-3">
+              <label for="resume_upload" class="col-sm-3 col-form-label">Resume Upload : <span>*</span></label>
+              <div class="col-sm-7">
+                <div  style="display: flex; align-items: center;">
+                  <input #uploadInput type="file" class="form-control resume_upload" [ngClass]="{'is-invalid': resumeUploadForm.controls['resume_upload'].errors && resumeUploadForm.controls['resume_upload'].touched || resumeUploadForm.controls['resume_upload'].errors && form.submitted,
+                  'is-valid': resumeUploadForm.controls['resume_upload'].valid }" formControlName="resume_upload" required>
+                  <button [disabled]="resumeUploaded" style="display: flex; align-items: center;" class="btn btn-primary mx-3" (click)="upload(uploadInput)" type="button">
+                    <ng-container *ngIf="!resumeUploaded else uploading">
+                     Upload
+                    </ng-container>
+                    <ng-template #uploading>
+                      <span class="spinner-border spinner-border-sm mx-2"  role="status" aria-hidden="true"></span> Uploading...
+                    </ng-template>
+                  </button>
+                </div>
+                <div class="invalid-feedback d-block"
+                    *ngIf="resumeUploadForm.controls['resume_upload'].errors && resumeUploadForm.controls['resume_upload'].touched || resumeUploadForm.controls['resume_upload'].errors && form.submitted">
+                    <div class="mx-2">* This filed is required!</div>
+                </div>
+              </div>
+            </div>
             <div class="row mb-3">
               <label for="name" class="col-sm-3 col-form-label">Name : <span>*</span></label>
               <div class="col-sm-9">
@@ -20,8 +41,8 @@
               <label for="email" class="col-sm-3 col-form-label">Email : <span>*</span></label>
               <div class="col-sm-9">
                 <input type="email" class="email form-control" [ngClass]="{'is-invalid': (resumeUploadForm.controls['email'].errors && resumeUploadForm.controls['email'].touched) ||
-                                                (resumeUploadForm.controls['email'].errors && form.submitted),
-                                  'is-valid': resumeUploadForm.controls['email'].valid }" id="email"
+                  (resumeUploadForm.controls['email'].errors && form.submitted),
+                  'is-valid': resumeUploadForm.controls['email'].valid }" id="email"
                   formControlName="email">
                 <div class="invalid-feedback"
                   *ngIf="(resumeUploadForm.controls['email'].errors && resumeUploadForm.controls['email'].touched) || (resumeUploadForm.controls['email'].errors && form.submitted)">
@@ -55,6 +76,53 @@
                 </div>
               </div>
             </div>
+
+            <div class="row mb-3">
+              <label for="current_company" class="col-sm-3 col-form-label">Current Company :<span>*</span></label>
+              <div class="col-sm-9">
+                <input type="text" class="current_company form-control" id="current_company" [ngClass]="{'is-invalid': resumeUploadForm.controls['current_company'].errors && resumeUploadForm.controls['current_company'].touched || resumeUploadForm.controls['current_company'].errors && form.submitted,
+                'is-valid': resumeUploadForm.controls['current_company'].valid }"
+                  formControlName="current_company">
+                <div class="invalid-feedback"
+                  *ngIf="resumeUploadForm.controls['current_company'].errors && resumeUploadForm.controls['current_company'].touched || resumeUploadForm.controls['current_company'].errors && form.submitted">
+                  <div>*This filed is required!</div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="current_ctc" class="col-sm-3 col-form-label">Current CTC :<span>*</span></label>
+              <div class="col-sm-9">
+                <input type="text" class="current_ctc form-control" id="current_ctc" [ngClass]="{'is-invalid': resumeUploadForm.controls['current_ctc'].errors && resumeUploadForm.controls['current_ctc'].touched || resumeUploadForm.controls['current_ctc'].errors && form.submitted,
+                'is-valid': resumeUploadForm.controls['current_ctc'].valid }" formControlName="current_ctc">
+                <div class="invalid-feedback"
+                  *ngIf="resumeUploadForm.controls['current_ctc'].errors && resumeUploadForm.controls['current_ctc'].touched || resumeUploadForm.controls['current_ctc'].errors && form.submitted">
+                  <div>*This filed is required!</div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="expected_ctc" class="col-sm-3 col-form-label">Expected CTC :<span>*</span></label>
+              <div class="col-sm-9">
+                <input type="text" class="expected_ctc form-control" id="expected_ctc" [ngClass]="{'is-invalid': resumeUploadForm.controls['expected_ctc'].errors && resumeUploadForm.controls['expected_ctc'].touched || resumeUploadForm.controls['expected_ctc'].errors && form.submitted,
+                'is-valid': resumeUploadForm.controls['expected_ctc'].valid }" formControlName="expected_ctc">
+                <div class="invalid-feedback"
+                  *ngIf="resumeUploadForm.controls['expected_ctc'].errors && resumeUploadForm.controls['expected_ctc'].touched || resumeUploadForm.controls['expected_ctc'].errors && form.submitted">
+                  <div>*This filed is required!</div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="notice_period" class="col-sm-3 col-form-label">Notice Period :<span>*</span></label>
+              <div class="col-sm-9">
+                <input type="text" class="notice_period form-control" id="notice_period" [ngClass]="{'is-invalid': resumeUploadForm.controls['notice_period'].errors && resumeUploadForm.controls['notice_period'].touched || resumeUploadForm.controls['notice_period'].errors && form.submitted,
+                'is-valid': resumeUploadForm.controls['notice_period'].valid }"
+                  formControlName="notice_period">
+                <div class="invalid-feedback"
+                  *ngIf="resumeUploadForm.controls['notice_period'].errors && resumeUploadForm.controls['notice_period'].touched || resumeUploadForm.controls['notice_period'].errors && form.submitted">
+                  <div>*This filed is required!</div>
+                </div>
+              </div>
+            </div>
             <div class="row mb-3">
               <label for="skype_id" class="col-sm-3 col-form-label">Skype ID :</label>
               <div class="col-sm-9">
@@ -71,25 +139,6 @@
               <label for="github" class="col-sm-3 col-form-label">GitHub ID :</label>
               <div class="col-sm-9">
                 <input type="text" class="github form-control" id="github" formControlName="github">
-              </div>
-            </div>
-            <div class="row mb-3">
-              <label for="current_company" class="col-sm-3 col-form-label">Current Company :</label>
-              <div class="col-sm-9">
-                <input type="text" class="current_company form-control" id="current_company"
-                  formControlName="current_company">
-              </div>
-            </div>
-            <div class="row mb-3">
-              <label for="current_ctc" class="col-sm-3 col-form-label">Current CTC :</label>
-              <div class="col-sm-9">
-                <input type="text" class="current_ctc form-control" id="current_ctc" formControlName="current_ctc">
-              </div>
-            </div>
-            <div class="row mb-3">
-              <label for="expected_ctc" class="col-sm-3 col-form-label">Expected CTC :</label>
-              <div class="col-sm-9">
-                <input type="text" class="expected_ctc form-control" id="expected_ctc" formControlName="expected_ctc">
               </div>
             </div>
             <div class="row mb-3">
@@ -121,6 +170,26 @@
                   <option value="8 Years">8</option>
                   <option value="9 Years">9</option>
                   <option value="10 Years">10</option>
+                  <option value="11 Years">11</option>
+                  <option value="12 Years">12</option>
+                  <option value="13 Years">13</option>
+                  <option value="14 Years">14</option>
+                  <option value="15 Years">15</option>
+                  <option value="16 Years">16</option>
+                  <option value="17 Years">17</option>
+                  <option value="18 Years">18</option>
+                  <option value="19 Years">19</option>
+                  <option value="20 Years">20</option>
+                  <option value="21 Years">21</option>
+                  <option value="22 Years">22</option>
+                  <option value="23 Years">23</option>
+                  <option value="24 Years">24</option>
+                  <option value="25 Years">25</option>
+                  <option value="26 Years">26</option>
+                  <option value="27 Years">27</option>
+                  <option value="28 Years">28</option>
+                  <option value="29 Years">29</option>
+                  <option value="30 Years">30</option>
                 </select>
               </div>
               Years
@@ -153,14 +222,7 @@
                 </select>
               </div>
             </div>
-            <div class="row mb-3">
-              <label for="notice_period" class="col-sm-3 col-form-label">Notice Period :</label>
-              <div class="col-sm-9">
-                <input type="text" class="notice_period form-control" id="notice_period"
-                  formControlName="notice_period">
-              </div>
-            </div>
-            <div class="row mb-3">
+            <!-- <div class="row mb-3">
               <label for="resume_path" class="col-sm-3 col-form-label">Resume Path : <span>*</span></label>
               <div class="col-sm-9">
                 <input type="text" class="resume_path form-control" id="resume_path" [ngClass]="{'is-invalid': resumeUploadForm.controls['resume_path'].errors && resumeUploadForm.controls['resume_path'].touched || resumeUploadForm.controls['resume_path'].errors && form.submitted,
@@ -171,7 +233,7 @@
                   <div>* Resume path is required!</div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <div class="row mb-3">
               <label for="qualification" class="col-sm-3 col-form-label">Candidate Qualification :</label>
               <div class="col-sm-9">
@@ -224,6 +286,10 @@
                     formControlName="referral_of_resume">
                   <label class="form-label" for="referral_of_resume">Direct</label>
                 </div>
+                <div class="invalid-feedback d-block"
+                    *ngIf="resumeUploadForm.controls['referral_of_resume'].errors && resumeUploadForm.controls['referral_of_resume'].touched || resumeUploadForm.controls['referral_of_resume'].errors && form.submitted">
+                    <div>* This field is required!</div>
+                  </div>
                 <div>
                   <label *ngIf="resumeUploadForm.controls['referral_of_resume'].value === 'employee'"
                     class="form-label">Employee ID : <span>*</span> </label>
@@ -249,15 +315,6 @@
               </div>
             </div>
             <div class="text-center">
-              <input type="file" style="display: none;" (change)="onChange($event)" #fileInput>
-              <button [disabled]="resumeUploaded" class="btn btn-primary mx-5" type="button" (click)="fileInput.click()">
-                <ng-container *ngIf="!resumeUploaded else uploading">
-                  Upload Resume
-                </ng-container>
-                <ng-template #uploading>
-                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Uploading...
-                </ng-template>
-              </button>
               <button class="btn btn-success mx-5" type="submit" data-bs-toggle="modal"
                 data-bs-target="#staticBackdrop">Submit Form</button>
             </div>
@@ -272,11 +329,11 @@
                       <button type="button" class="btn-close" (click)="form.resetForm()" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                     </div>
-                    <div class="modal-body text-center">
+                    <div class="modal-body text-center text-success">
                       Your have successfully submitted the form!
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-primary" (click)="form.resetForm()"
+                      <button type="button" class="btn btn-success" (click)="form.resetForm()"
                         data-bs-dismiss="modal">Close</button>
                     </div>
                   </ng-container>
@@ -286,11 +343,11 @@
                     <h5 class="modal-title modal-title-danger" id="staticBackdropLabel">Alert !</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                  <div class="modal-body text-center">
+                  <div class="modal-body text-center text-danger">
                     Please fill in all mandatory fields!
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                   </div>
                 </ng-template>
               </div>
@@ -301,6 +358,7 @@
     </div>
   </div>
 </div>
+
 
 <!-- <div class="container-fluid upload-resume-form">
   <h2 class="upload-new-resume">Upload New Resume</h2>
