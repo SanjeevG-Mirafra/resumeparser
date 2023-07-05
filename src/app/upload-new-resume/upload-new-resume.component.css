@@ -32,6 +32,17 @@ form{
     font-weight: bold;
 }
 
+body{
+  margin:0;
+  overflow:hidden
+}
+canvas{
+  border:1px solid #d3d3d3;
+}
+
+
+
+
 /* .upload-resume-form {
     padding: 1rem;
     background-color: rgb(217, 217, 223);

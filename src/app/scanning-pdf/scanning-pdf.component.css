@@ -1,0 +1,51 @@
+/* body {
+  width: 100vw;
+  height: 100vh;
+  background-color: lightgray;
+  margin: 0;
+  padding: 0;
+  display: flex;
+} */
+#dup-scanning-files .scanner {
+  height: 1rem;
+  width: 456px;
+  background-color: #226fbb;
+  position: absolute;
+  animation: scan 2s cubic-bezier(0.46, 0.55, 0.59, 0.95) alternate infinite;
+  box-shadow: 0 0 60px 30px #0a81b9;
+}
+#dup-scanning-files .scanner::before, #dup-scanning-files .scanner::after {
+  content: '';
+  width: 0px;
+  height: 100%;
+  right: 100%;
+  top: 0;
+  position: absolute;
+}
+@keyframes scan {
+  0%, 40% {
+    top: 2%;
+ }
+  70%, 100% {
+    top: 95%;
+ }
+}
+
+.ng2-pdf-viewer-container {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.c-backdrop {
+  position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 100;
+}
