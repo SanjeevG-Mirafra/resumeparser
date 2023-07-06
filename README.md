@@ -1,6 +1,23 @@
 # Resume
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
+# About Project
+
+* The project uses Angular Reactive Form for form implementation.
+
+* Before running the project, ensure that the "ALLOW CORS" extension is added to the browser and enabled.
+
+* Bootstrap is used for styling the project.
+
+* Upon uploading a candidate's resume, the data from the resume is fetched from a Python backend server.
+
+* The fetched data is automatically populated in the respective inputs of the form.
+
+* Mandatory fields that are not fetched and filled automatically must be manually filled by the user.
+
+* If the form is submitted before filling all the mandatory fields, an alert message will pop up, prompting the user to fill all mandatory fields before submitting.
+
+* If all the mandatory fields are filled, submitting the form will trigger a success message popup, and the form will automatically reset.
 
 ## Development server
 
