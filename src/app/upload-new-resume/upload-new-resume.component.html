@@ -44,6 +44,7 @@
                     <ng-container *ngIf="!resumeUploaded; else uploading">
                       Upload
                     </ng-container>
+                    
                     <ng-template #uploading>
                       <span
                         class="spinner-border spinner-border-sm mx-2"
@@ -63,7 +64,10 @@
                       form.submitted)
                   "
                 >
+                
                   <div class="mx-2">* This filed is required!</div>
+
+                  
                 </div>
               </div>
             </div>
@@ -915,4 +919,16 @@
     </div>
   </div>
 </div>
+
 <app-scanning-pdf [pdfSrc]="pdfSrc" [uploadStatus]="uploadStatus"></app-scanning-pdf>
+
+<!-- errorMessage popup -->
+<ng-container>
+  <div *ngIf="errorMessage" class="error-popup">
+    <div class="error-popup-content">
+      {{ errorMessage }}
+    </div>
+  </div>
+</ng-container>
+
+

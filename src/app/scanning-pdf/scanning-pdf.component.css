@@ -8,7 +8,7 @@
 } */
 #dup-scanning-files .scanner {
   height: 1rem;
-  width: 456px;
+  width: 100%;
   background-color: #226fbb;
   position: absolute;
   animation: scan 2s cubic-bezier(0.46, 0.55, 0.59, 0.95) alternate infinite;

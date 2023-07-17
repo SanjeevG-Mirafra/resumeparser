@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Hyperlinks } from '../interfaces/upload-new-resume';
+import { throwError } from 'rxjs';
+import { UploadService } from '../file-upload.service';
 
 @Component({
   selector: 'app-upload-new-resume',
@@ -22,8 +24,11 @@ export class UploadNewResumeComponent  {
   resumeUploaded = false;
 
   url:any="";
+  errorMessage: string;
+  UploadService: any;
+  parseResume: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private uploadService: UploadService) { }
 
   ngOnInit(): void {
     this.resumeUploadForm = new FormGroup({
@@ -69,9 +74,10 @@ export class UploadNewResumeComponent  {
     this.resumeUploaded = true;
     // this.http.post("http://192.168.1.29:5001/parse_resume", formData)
     this.uploadStatus = true;
+
     setTimeout(() => {
-      this.http.post("http://106.51.77.156:5001/parse_resume", formData)
-        .subscribe((data: any) => {
+      this.uploadService.parseResume(formData).subscribe(
+        (data: any) => {
           console.log(data);
           this.uploadStatus = false;
           const fetchedData = {
@@ -80,10 +86,36 @@ export class UploadNewResumeComponent  {
             ...this.hyperLinkMapper(data?.hyperlinks)
           }
           this.resumeUploaded = false;
-          // console.log(fetchedData, this.hyperLinkMapper(data?.hyperlinks));
           this.resumeUploadForm.patchValue(fetchedData);
-        });
-    }, 4000); // Delay of 7 seconds for displaying the scanning of the resume
+        },
+        (error: any) => {
+          console.error(error);
+          this.handleError(error);
+        }
+      );
+    }, 2000);
+    
+
+    // setTimeout(() => {
+    //   // this.http.post("http://106.51.77.156:5001/parse_resume", formData)
+    //       this.http.post("http://192.168.1.29:5001/parse_resume", formData)
+
+    //     .subscribe((data: any) => {
+    //       console.log(data);
+    //       this.uploadStatus = false;
+    //       const fetchedData = {
+    //         ...data,
+    //         skills: Object.keys(data['skills']),
+    //         ...this.hyperLinkMapper(data?.hyperlinks)
+    //       }
+    //       this.resumeUploaded = false;
+    //       // console.log(fetchedData, this.hyperLinkMapper(data?.hyperlinks));
+    //       this.resumeUploadForm.patchValue(fetchedData);
+    //     }, (error: any) => {
+    //       console.error(error);
+    //       this.handleError(error);
+    //     });
+    // },2000); // Delay of 7 seconds for displaying the scanning of the resume
   }
 
   /**
@@ -142,6 +174,24 @@ export class UploadNewResumeComponent  {
     //   });
     // }
   }
+
+  handleError(error: HttpErrorResponse) {
+    if (error.status === 0) {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error('An error occurred:', error.error);
+      this.errorMessage = 'A client-side or network error occurred. Please try again.';
+    } else {
+      // The backend returned an unsuccessful response code.
+      console.error(`Backend returned code ${error.status}, body was: `, error.error);
+      this.errorMessage = `Server is not responding,Please try again later.`;
+    }
+    return throwError(() => new Error('Something bad happened; please try again later.'));
+  }
+  
 }
+
+
+
+
 
 

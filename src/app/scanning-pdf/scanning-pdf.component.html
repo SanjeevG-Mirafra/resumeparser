@@ -1,5 +1,8 @@
 <!-- Adding pdf scanner -->
+<!-- <ng-container *ngIf="(uploadStatus || errorMessage) ? !!pdfSrc : false"> -->
+  <!-- form.valid ? '#staticBackdrop1' : '#staticBackdrop2' -->
 <ng-container *ngIf="!!pdfSrc && uploadStatus" >
+ <div *ngIf="displayBlock">
   <div
     style="
       position: absolute;
@@ -13,6 +16,7 @@
       z-index: 101;
     "
   >
+ 
     <div style="position: relative">
       <pdf-viewer
         [src]="pdfSrc"
@@ -25,5 +29,17 @@
       </div>
     </div>
   </div>
+</div>
+  
+ 
   <div class="c-backdrop"></div>
+
+ 
 </ng-container>
+
+
+
+
+
+
+
