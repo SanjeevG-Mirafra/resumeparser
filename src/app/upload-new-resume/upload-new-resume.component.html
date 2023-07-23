@@ -33,9 +33,10 @@
                         resumeUploadForm.controls['resume_upload'].valid
                     }"
                     formControlName="resume_upload"
+                    (change)="onFileSelected($event)"
                   />
                   <button
-                    [disabled]="resumeUploaded"
+                  [disabled]="!selectedFile || resumeUploaded"
                     style="display: flex; align-items: center"
                     class="btn btn-primary mx-3"
                     (click)="upload(uploadInput)"

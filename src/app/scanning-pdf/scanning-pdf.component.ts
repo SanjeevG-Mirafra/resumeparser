@@ -16,7 +16,7 @@ export class ScanningPdfComponent {
   ngOnInit() {
     setTimeout(() => {
       this.stopDisplayBlock(); 
-    }, 10000);
+    }, 15000);
    
   }
 

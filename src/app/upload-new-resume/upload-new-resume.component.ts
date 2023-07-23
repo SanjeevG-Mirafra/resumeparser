@@ -27,6 +27,7 @@ export class UploadNewResumeComponent  {
   errorMessage: string;
   UploadService: any;
   parseResume: any;
+  
 
   constructor(private http: HttpClient, private uploadService: UploadService) { }
 
@@ -188,6 +189,11 @@ export class UploadNewResumeComponent  {
     return throwError(() => new Error('Something bad happened; please try again later.'));
   }
   
+
+  onFileSelected(event: Event): void {
+    const inputElement = event.target as HTMLInputElement;
+    this.selectedFile = inputElement.files.item(0);
+  }
 }
 
 
