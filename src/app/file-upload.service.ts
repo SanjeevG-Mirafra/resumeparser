@@ -10,8 +10,8 @@ export class UploadService {
   constructor(private http: HttpClient) {}
 
   parseResume(formData: FormData): Observable<any> {
-    // return this.http.post("http://192.168.1.29:5001/parse_resume", formData);
-    return this.http.post("https://dummyjson.com/products/1", formData);
+    return this.http.post("http://192.168.1.29:5001/parse_resume", formData);
+    // return this.http.post("https://dummyjson.com/products/1", formData);
 
   }
 }
